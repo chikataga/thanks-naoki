@@ -3237,6 +3237,11 @@ isstream@~0.1.2:
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
   integrity sha1-R+Y/evVa+m+S4VAOaQ64uFKcCZo=
 
+jquery.random-elements@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/jquery.random-elements/-/jquery.random-elements-0.1.1.tgz#adf0728549dc3a27033b7b12a4e44d2e6362360b"
+  integrity sha1-rfByhUncOicDO3sSpORNLmNiNgs=
+
 jquery@^3.4.1:
   version "3.4.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.4.1.tgz#714f1f8d9dde4bdfa55764ba37ef214630d80ef2"
