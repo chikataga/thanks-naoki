@@ -35,22 +35,51 @@ window.onload=function(){
 
   });
 
-  $(".wrapper").randomElements(
+  $('.wrapper').randomElements(
     [
       '<img src="img/icons/01.png">',
       '<img src="img/icons/02.png">',
       '<img src="img/icons/03.png">'
     ],
     {
-      className: 'random-content',
-      num: 20,
+      className: 'naoki-image',
+      num: 10,
       stageWidthExpansion: 0,
       stageHeightExpansion: 0,
-      width: 80,
-      height: 80,
+      width: 180,
+      height: 180,
       isRandomSize: false,
       tryCount: 10,
       adjustment: 0
     }
   );
+
+  $('.wrapper').randomElements(
+    [
+      '<img src="img/icons/01.png">',
+      '<img src="img/icons/02.png">',
+      '<img src="img/icons/03.png">'
+    ],
+    {
+      className: 'slack-icon',
+      num: 60,
+      stageWidthExpansion: 0,
+      stageHeightExpansion: 0,
+      width: 70,
+      height: 70,
+      isRandomSize: false,
+      tryCount: 10,
+      adjustment: 10
+    }
+  );
+
+  $(document).on("click", ".slack-icon", function () {
+    const href = $(this).attr('src');
+    console.log(href);
+    $('body').addClass("active");
+  });
+
+  $('.overlay').click(function() {
+    $('body').removeClass("active");
+  })
 }
