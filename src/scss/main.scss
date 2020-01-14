@@ -28,9 +28,12 @@ footer {
   height: 100%;
   z-index: 100;
   top: 0;
+  opacity: 0;
+  transition: 0.5s opacity;
 
   .active & {
     display: block;
+    opacity: 1;
   }
 }
 
@@ -55,8 +58,13 @@ footer {
   transition: 0.3s all;
 
   &:hover {
-    transform: scale(1.5);
+    transform: scale(1.8);
     cursor: pointer;
+  }
+
+  &.active {
+    z-index: 1000;
+    transform: scale(2);
   }
 }
 

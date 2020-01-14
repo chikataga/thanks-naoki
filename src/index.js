@@ -18,6 +18,7 @@ window.onload=function(){
   let timeoutId;
   document.body.addEventListener("mousemove", function(e){
     if ( timeoutId ) return ;
+    if ($('body').hasClass('active')) return;
 
     timeoutId = setTimeout( function () {
       timeoutId = 0 ;
@@ -76,10 +77,12 @@ window.onload=function(){
   $(document).on("click", ".slack-icon", function () {
     const href = $(this).attr('src');
     console.log(href);
+    $(this).addClass("active");
     $('body').addClass("active");
+
   });
 
   $('.overlay').click(function() {
-    $('body').removeClass("active");
+    $('.active').removeClass("active");
   })
 }
