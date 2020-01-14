@@ -36,7 +36,7 @@ window.onload=function(){
 
   });
 
-  const iconArray = Messages.map(item => `<img src='img/icons/${item.user_id}.png'>`);
+  const iconArray = Messages.map(item => `<img src='img/icons/${item.user_id}.png' data-name='${item.user_id}'>`);
 
   $('.wrapper').randomElements(
     [
@@ -73,14 +73,18 @@ window.onload=function(){
   );
 
   $(document).on("click", ".slack-icon", function () {
-    const href = $(this).attr('src');
-    console.log(href);
+    if ($('body').hasClass('active')) return;
     $(this).addClass("active");
     $('body').addClass("active");
+
+    const userName = $(this).attr('data-name');
+    const messageItem = Messages.filter(item => item.user_id == userName)[0];
+    $('.message-container').append(`<div class="message-inner"><div class="message-detail"><div class="text">${messageItem.message.replace(/[\r\n]+/g, "<br />")}</div><div class="name">${messageItem.team} ${messageItem.user_name}</div></div></div>`)
 
   });
 
   $('.overlay').click(function() {
     $('.active').removeClass("active");
+    $('.message-container').empty();
   })
 }
