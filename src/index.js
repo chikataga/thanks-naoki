@@ -1,11 +1,11 @@
 import { Bounce, Cubic, Linear } from 'gsap/EasePack';
 import $ from 'jquery';
 import { TweenMax, TimelineMax } from 'gsap';
-import ScrollMagic from 'scrollmagic';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap';
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 import './scss/style.scss';
 import 'jquery.random-elements';
+import Messages from './messages.json';
 
 window.onload=function(){
   const pageWidth = window.innerWidth;
@@ -36,6 +36,8 @@ window.onload=function(){
 
   });
 
+  const iconArray = Messages.map(item => `<img src='img/icons/${item.user_id}.png'>`);
+
   $('.wrapper').randomElements(
     [
       '<img src="img/icons/01.png">',
@@ -56,11 +58,7 @@ window.onload=function(){
   );
 
   $('.wrapper').randomElements(
-    [
-      '<img src="img/icons/01.png">',
-      '<img src="img/icons/02.png">',
-      '<img src="img/icons/03.png">'
-    ],
+    iconArray,
     {
       className: 'slack-icon',
       num: 60,
