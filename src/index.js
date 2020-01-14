@@ -79,7 +79,7 @@ window.onload=function(){
 
     const userName = $(this).attr('data-name');
     const messageItem = Messages.filter(item => item.user_id == userName)[0];
-    $('.message-container').append(`<div class="message-inner"><div class="message-detail"><div class="text">${messageItem.message.replace(/[\r\n]+/g, "<br />")}</div><div class="name">${messageItem.team} ${messageItem.user_name}</div></div></div>`)
+    $('.message-container').append(`<div class="message-inner"><div class="message-detail"><div class="text">${messageItem.message.replace(/[\r\n]+/g, "<br />")}</div><div class="name">${messageItem.team} ${messageItem.user_name}</div></div></div><img src="img/icons/${messageItem.user_id}.png" class="thumbnail">`)
 
   });
 
