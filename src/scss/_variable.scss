@@ -1,7 +1,8 @@
 // Typography
 
-$font-family-body: "whitneyssm-book", "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$font-family-header: "whitneyssm-semibold", "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-body: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-header: "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-message: "Sawarabi Gothic", "Noto Sans JP", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
 // Breakpoint
 
@@ -11,12 +12,12 @@ $md: 768px;
 
 $gray: #404040;
 $light-gray: #B6BCCF;
-$pale-gray: #D8DBE8;
+$pale-gray: #e3e3ee;
 $black: #323734;
 $blue: #2378BD;
 $light-blue: #dce7f4;
 $sky-blue: #7BAED7;
-$white: #ffffff;
+$white: #fafafa;
 $pink: #FB4E6A;
-$navy: #1f2533;
+$navy: #333744;
 $light-navy: #243B57;

@@ -1,7 +1,5 @@
 body {
-  font-family: "whitneyssm-book", "Noto Sans JP", -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: $font-family-body;
   font-weight: 500;
   text-align: center;
   text-rendering: optimizeLegibility;
@@ -30,27 +28,3 @@ p {
   line-height: 2;
 }
 
-.number,
-.number-text {
-  font-weight: bold;
-  color: $blue;
-  font-size: 72px;
-  line-height: 1.1;
-  font-family: "Noto Sans JP", -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  letter-spacing: -3px;
-
-  @media (max-width: 1140px) {
-    font-size: 56px;
-  }
-
-  @media (max-width: 768px) {
-    font-size: 36px;
-    letter-spacing: 0;
-  }
-
-  @media (max-width: 425px) {
-    font-size: 24px;
-  }
-}
