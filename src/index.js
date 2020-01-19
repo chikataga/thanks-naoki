@@ -68,12 +68,13 @@ window.onload=function(){
       height: 70,
       isRandomSize: false,
       tryCount: 10,
-      adjustment: 10
+      adjustment: 0
     }
   );
 
   $(document).on("click", ".slack-icon", function () {
     if ($('body').hasClass('active')) return;
+
     $(this).addClass("active");
     $('body').addClass("active");
 
@@ -81,10 +82,62 @@ window.onload=function(){
     const messageItem = Messages.filter(item => item.user_id == userName)[0];
     $('.message-container').append(`<div class="message-inner"><div class="message-detail"><div class="text">${messageItem.message.replace(/[\r\n]+/g, "<br />")}</div><div class="name">${messageItem.team} ${messageItem.user_name}</div></div></div><img src="img/icons/${messageItem.user_id}.png" class="thumbnail">`)
 
+    const timeLine = new TimelineMax();
+    timeLine.set(
+    '.message-inner', {
+      scale: 0.7
+    }).set(
+      '.thumbnail', {
+      scale: 0.7,
+      x: -10,
+       }).to(this, 0.1, {
+        alpha: 0,
+        scale: 0,
+        x: -10,
+        delay: 0.7,
+        ease: Power3.easeIn
+      }).to('.thumbnail', 0.3, {
+          alpha: 1,
+          scale: 1,
+          x: 0,
+          delay: 0.1,
+          ease: Power3.easeIn
+        }).to('.message-inner', 0.1, {
+        alpha: 1,
+        scale: 1,
+        delay: 0.1,
+        ease: Power3.easeIn
+      })
   });
 
   $('.overlay').click(function() {
-    $('.active').removeClass("active");
-    $('.message-container').empty();
+    const timeLine = new TimelineMax();
+    timeLine.set(
+    '.slack-icon.active', {
+      scale: 1.8
+    }
+    ).to('.message-inner', 0.1, {
+          alpha: 0,
+          scale: 0.7,
+          delay: 0.1,
+          ease: Power3.easeIn
+        }).to('.thumbnail', 0.3, {
+        alpha: 0,
+        scale: 0.7,
+        delay: 0.1,
+        ease: Power3.easeIn,
+        onComplete: function(){
+          $('.message-container').empty();
+          TweenMax.to('.slack-icon.active', 0.3, {
+            alpha: 1,
+            scale: 1,
+            x: 0,
+            ease: Power3.easeIn,
+            onComplete: function(){
+              $('.active').removeClass("active");
+            }
+          })
+        }
+      })
   })
 }
