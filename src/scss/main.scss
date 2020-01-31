@@ -125,14 +125,15 @@ footer {
 }
 
 .wrapper {
-  width: 150%;
-  min-height: 150%;
+  width: 200%;
+  min-height: 200%;
   position: relative;
+  margin: 60px;
 }
 
 .slack-icon {
-  width: 100px;
-  height: 100px;
+  width: 70px!important;
+  height: 70px!important;
   display: block;
   position: absolute;
   box-shadow: 0 0 5px rgba(#000, 0.1);
@@ -152,4 +153,44 @@ footer {
 
 .naoki-image {
   position: absolute;
+  height: auto!important;
+  z-index: -1;
+}
+
+.tooltips {
+  display: block;
+  position: absolute;
+  z-index: 9999;
+  width: auto;
+  height: auto;
+  padding: 0.3em 0.5em;
+  color: $white;
+  font-size: 1.4em;
+  background: $navy;
+  border-radius: 0.5em;
+  animation-name: tooltip;
+  animation-duration: 0.2s;
+  transform-origin: left top;
+}
+
+@keyframes tooltip {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.tooltips:after {
+  width: 100%;
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0.5em;
+  top: -8px;
+  border-top:8px solid transparent;
+  border-left:8px solid $navy;
 }
