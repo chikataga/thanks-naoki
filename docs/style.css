@@ -193,7 +193,7 @@ footer {
   height: auto;
   padding: 0.3em 0.5em;
   color: #fafafa;
-  font-size: 1.4em;
+  font-size: 1em;
   background: #333744;
   border-radius: 0.5em;
   animation-name: tooltip;
@@ -201,10 +201,12 @@ footer {
   transform-origin: left top; }
 
 @keyframes tooltip {
-  from {
+  0% {
     opacity: 0;
-    transform: scale(0.3); }
-  to {
+    transform: scale(0.1); }
+  80% {
+    transform: scale(1.2); }
+  100% {
     opacity: 1;
     transform: scale(1); } }
 
