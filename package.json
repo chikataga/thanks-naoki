@@ -12,7 +12,7 @@
     "url": "git+ssh://git@github.com/chikataga/repro-anniversary-site.git"
   },
   "dependencies": {
-    "gsap": "^2.0.1",
+    "gsap": "^3.6.0",
     "jquery": "^3.4.1",
     "jquery.random-elements": "^0.1.1",
     "scrollmagic": "^2.0.6"
