@@ -5,56 +5,7 @@ import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugin
 import 'imports-loader?define=>false!scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
 import './scss/style.scss';
 import 'jquery.random-elements';
-import { RandomElements } from 'jquery.random-elements/randomElements/RandomElements';
 import Messages from './messages.json';
-
-class RandomPositionElements extends RandomElements {
-  constructor(
-    contents,
-    {
-      className = 'randomContent',
-      num = 20,
-      stageWidth = 0,
-      stageHeight = 0,
-      stageWidthExpansion = 0,
-      stageHeightExpansion = 0,
-      width = 100,
-      height = 100,
-      min = 0,
-      isRandomSize = true,
-      tryCount = 10,
-      adjustment = 0,
-      sameRatio = true
-    }) {
-      this.contents = contents;
-      this.className = className;
-      this.num = num;
-      this.stageWidthExpansion = stageWidthExpansion;
-      this.stageHeightExpansion = stageHeightExpansion;
-      this.stageWidth = stageWidth + (stageWidthExpansion * 2);
-      this.stageHeight = stageHeight + (stageHeightExpansion * 2);
-      this.width = width;
-      this.height = height;
-      this.min = min;
-      this.isRandomSize = isRandomSize;
-      this.tryCount = tryCount;
-      this.sameRatio = sameRatio;
-      this.adjustment = adjustment;
-
-      this.randomElements = [];
-  }
-
-  createRandomElement($content) {
-    for (var i = 0; i < this.num; i++) {
-      const contentRandomNum = Math.floor(Math.random() * this.contents.length);
-      const $el = $(this.contents[contentRandomNum]);
-
-      this.randomTry($el.get(), i, this.tryCount);
-      $el.css(this.randomElements[i]).addClass(this.className);
-      $content.append($el);
-    }
-  }
-}
 
 window.onload=function(){
   const pageWidth = window.innerWidth;
@@ -88,7 +39,7 @@ window.onload=function(){
   const iconArray = Messages.map(item => `<img src='img/icons/${item.user_id}.png' class='slack-icon' data-name='${item.user_id}'>`);
   const iconLength = iconArray.length;
 
-  $('.wrapper').RandomPositionElements(
+  $('.wrapper').randomElements(
     iconArray,
     {
       num: iconLength,
